@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Know About 西西 | Personal Portfolio</title>
+  <meta name="description" content="西西的个人作品集 — AI Native 探索者，品牌营销创意人" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <!-- ═══════════════════ 导航栏 ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">西西</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#experience" data-i18n="nav.experience">个人经历</a></li>
+        <li><a href="#works" data-i18n="nav.works">工作成果</a></li>
+        <li><a href="#ai-creation" data-i18n="nav.ai">AI创作</a></li>
+        <li><a href="#surprise" data-i18n="nav.surprise">惊喜盲盒</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">联系方式</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-icon theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="btn-icon lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-label">EN</span>
+        </button>
+        <button class="btn-icon mobile-menu" id="mobileMenu" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ 首屏 Hero ═══════════════════ -->
+  <section class="hero" id="hero">
+    <!-- 全屏 3D 背景（保持原样） -->
+    <div class="hero-canvas-wrapper">
+      <canvas id="heroCanvas"></canvas>
+    </div>
+    <!-- 中央文字区 -->
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-title-line" data-i18n="hero.title">Know about 西西</span>
+      </h1>
+      <p class="hero-subtitle typewriter" id="typewriter"></p>
+      <div class="hero-desc">
+        <p data-i18n="hero.desc2">希望我微不足道的 idea，能够点亮你的某些想法</p>
+      </div>
+      <p class="hero-badge" data-i18n="hero.badge">ISFJ & AI Native 探索者</p>
+    </div>
+    <!-- 左侧标签 -->
+    <div class="hero-tags" id="heroTags">
+      <div class="custom-floating-tag tag-float" style="top: calc(50vh - 328px); left: 500px;">💡 传播策划 idea</div>
+      <div class="custom-floating-tag tag-float" style="top: 15%; left: 55%;">🔥 热点捕捉 + 营销</div>
+      <div class="custom-floating-tag tag-float" style="top: 35%; left: 5%;">🤖 AI 产品探索</div>
+      <div class="custom-floating-tag tag-float" style="top: 50%; left: 50%;">📊 数据洞察</div>
+      <div class="custom-floating-tag tag-float" style="top: 65%; left: 0;">⚡ Vibe Coding</div>
+      <div class="custom-floating-tag tag-float" style="top: 78%; left: 48%;">🌊 网感一流</div>
+      <div class="custom-floating-tag tag-float" style="top: calc(50vh + 172px); left: calc(55% + 450px);">🎨 AI 内容创作</div>
+    </div>
+    <!-- 右侧彩球物理沙盒 -->
+    <div class="hero-interactive-stage">
+      <div class="balls-sandbox-hint">⚡ 挥动鼠标 / 手指 击飞灵感球</div>
+      <canvas id="ballsCanvas"></canvas>
+    </div>
+    <!-- 星芒装饰 -->
+    <div class="star star-1"></div>
+    <div class="star star-2"></div>
+    <div class="star star-3"></div>
+    <div class="star star-4"></div>
+    <div class="star star-5"></div>
+    <a href="#experience" class="scroll-hint" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ═══════════════════ 个人经历 ═══════════════════ -->
+  <section class="section section-gradient section-experience" id="experience">
+    <div class="container experience-layout">
+      <div class="experience-left">
+        <div class="lanyard-container" id="lanyardContainer">
+          <div class="lanyard-hint">用鼠标按住工牌甩动它 👇</div>
+          <canvas id="lanyardCanvas"></canvas>
+        </div>
+      </div>
+      <div class="experience-right">
+        <h2 class="section-title" style="text-align: left;" data-i18n="experience.title">个人经历</h2>
+        <p class="section-subtitle" style="text-align: left;" data-i18n="experience.subtitle">来人间一趟，想多收集一些"哈哈哈哈哈"</p>
+      <div class="timeline-wrapper">
+
+        <!-- 1. 中兴通讯 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-work"></span>
+          <div class="timeline-card">
+            <span class="timeline-date">📅 2022.07 - 至今</span>
+            <h3 class="timeline-title" data-i18n="exp.zte.title">中兴通讯股份有限公司 · 品牌策划经理</h3>
+            <ul class="timeline-sub-list">
+              <li data-i18n="exp.zte.li1"><strong>项目负责人（Flip2上市）：</strong>主导努比亚Flip2的新品上市传播策划与项目落地，实现品牌声量、抖音传播指数与电商访客的有效联动。抖音话题#努比亚Flip2播放量已达<strong>1.6亿</strong>，抖音传播指数达<strong>年度峰值</strong>。<span class="view-media-badge" data-preview="assets/xuanfu1.png">📊 抖音指数</span></li>
+              <li data-i18n="exp.zte.li2"><strong>跨界营销：</strong>推动"中兴x努比亚成为苏超官方赞助商"跨界足球赞助项目的官方物料制作+外围传播，通过落地执行官方社媒+外围内容的热点策划，将合作权益转化为大众可感知、可讨论、可共鸣的<strong>品牌破圈声量</strong>。<span class="view-media-badge" data-preview="assets/xuanfu2.jpg">📸 苏超现场照</span></li>
+              <li data-i18n="exp.zte.li3"><strong>投放策略：</strong>配合努比亚Z80Ultra、Z70SUltra摄影师版、Flip2等新品上市节奏，主导抖音、微博等信息流广告投放策略优化。沉淀投放数据模型，为品牌<strong>长期投流策略</strong>提供决策依据。</li>
+              <li data-i18n="exp.zte.li4"><strong>创作者运营：</strong>从0到1搭建品牌官方KOC创作者团队，招募核心创作者<span class="hl">500+人</span>，覆盖数码、摄影、生活方式等垂直领域。单篇最高互动<span class="hl">50W+</span>，曝光最高超<span class="hl">2000W+</span>，带动电商店铺进店UV增长<span class="hl">30%</span>。</li>
+            </ul>
+            <div class="timeline-micro-gallery">
+              <div class="micro-tile lightbox-trigger" data-lightbox="assets/zte1.jpg"><img src="assets/zte1.jpg" alt="中兴项目1"></div>
+              <div class="micro-tile lightbox-trigger" data-lightbox="assets/zte2.jpg"><img src="assets/zte2.jpg" alt="中兴项目2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 上海大学硕士 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-edu"></span>
+          <div class="timeline-card" style="display: flex; gap: 24px; align-items: center; padding-top: 2.7rem; padding-bottom: 2.7rem;">
+            <div style="flex: 1; min-width: 0;">
+              <span class="timeline-date">📅 2019.09 - 2022.06</span>
+              <h3 class="timeline-title" data-i18n="exp.shu.title">上海大学 · 新闻传播学硕士</h3>
+              <p class="timeline-meta" data-i18n="exp.shu.meta">🏆 成果：在读期间发表中文核心期刊论文1篇</p>
+            </div>
+            <div class="micro-tile" data-preview="assets/SH1.jpg" style="width: 150px; height: 150px; flex-shrink: 0; border-radius: 16px;">
+              <img src="assets/SH1.jpg" alt="上海大学1" style="border-radius: 16px;">
+            </div>
+            <div class="micro-tile" data-preview="assets/SH2.jpg" data-preview-ratio="9:16" style="width: 150px; height: 150px; flex-shrink: 0; border-radius: 16px;">
+              <img src="assets/SH2.jpg" alt="上海大学2" style="border-radius: 16px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 小红书实习 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-intern"></span>
+          <div class="timeline-card">
+            <span class="timeline-date">📅 2021.04 - 2021.09</span>
+            <h3 class="timeline-title" data-i18n="exp.xhs.title">小红书 · 短视频运营实习 <span class="intern-badge">🎓 实习经历</span></h3>
+            <ul class="timeline-sub-list">
+              <li data-i18n="exp.xhs.li1">📹 独立策划&制作短视频<span class="hl">400+</span>，设计宣传海报70+，内容曝光覆盖百万级用户池。</li>
+              <li data-i18n="exp.xhs.li2">📈 实现社区拉新<span class="hl">3W+</span>，激活用户8000+，视频渠道注册转化率突破<span class="hl">40%</span>，远超同期均值。<span class="view-media-badge" data-preview="assets/xiaohongs1.jpg">📈 小红书实习</span></li>
+              <li data-i18n="exp.xhs.li3">⚙️ 深度参与选题策略与爆款复制逻辑，搭建素材模板提升内容生产效率<span class="hl">30%</span>。</li>
+            </ul>
+            <div class="timeline-micro-gallery">
+              <div class="micro-tile lightbox-trigger" data-lightbox="assets/xiaohongs2.jpg"><img src="assets/xiaohongs2.jpg" alt="小红书实习1"></div>
+              <div class="micro-tile lightbox-trigger" data-lightbox="assets/xiaohongs3.jpg"><img src="assets/xiaohongs3.jpg" alt="小红书实习2"></div>
+              <div class="micro-tile lightbox-trigger" data-lightbox="assets/xiaohongs4.jpg"><img src="assets/xiaohongs4.jpg" alt="小红书实习3"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 第一财经实习 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-intern"></span>
+          <div class="timeline-card">
+            <span class="timeline-date">📅 2020.09 - 2020.12</span>
+            <h3 class="timeline-title" data-i18n="exp.yicai.title">上海第一财经数据科技有限公司 · 品牌内容运营实习 <span class="intern-badge">🎓 实习经历</span></h3>
+            <ul class="timeline-sub-list">
+              <li data-i18n="exp.yicai.li1">📖 运营原创IP"路塔塔"，策划跨平台内容（双微/知乎/小红书），累计阅读量<span class="hl">5W+</span>，粉丝互动率提升<span class="hl">27%</span>。</li>
+              <li data-i18n="exp.yicai.li2">🏷️ 参与"寻找下一个C位新货架"线下沙龙全流程组织，协助品牌方对接及传播物料统筹。</li>
+              <li data-i18n="exp.yicai.li3">📊 分析站内内容数据，输出周报优化选题方向，推动内容传播效率增长。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. 南昌大学本科 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-bachelor"></span>
+          <div class="timeline-card" style="display: flex; gap: 24px; align-items: center; padding-top: 3.2rem; padding-bottom: 3.2rem;">
+            <div style="flex: 1; min-width: 0;">
+              <span class="timeline-date">📅 2015.09 - 2019.06</span>
+              <h3 class="timeline-title" data-i18n="exp.ncu.title">南昌大学 · 广播电视学本科</h3>
+              <p class="timeline-meta" style="font-size: 0.88rem;" data-i18n="exp.ncu.meta">🎯 GPA专业前5%；多次获得南昌大学特等奖学金、一等奖学金、"优秀学生干部"、"优秀毕业生"等荣誉称号。</p>
+            </div>
+            <div style="display: flex; gap: 12px; flex-shrink: 0;">
+              <div class="ncu-photo lightbox-trigger" data-lightbox="assets/ncu1.jpg">
+                <img src="assets/ncu1.jpg" alt="南昌大学1">
+              </div>
+              <div class="ncu-photo lightbox-trigger" data-lightbox="assets/ncu2.png">
+                <img src="assets/ncu2.png" alt="南昌大学2">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. 南昌奥朗广告实习 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-intern"></span>
+          <div class="timeline-card">
+            <span class="timeline-date">📅 2018.10 - 2019.02</span>
+            <h3 class="timeline-title" data-i18n="exp.aolang.title">南昌奥朗广告 · 新媒体运营实习 <span class="intern-badge">🎓 实习经历</span></h3>
+            <ul class="timeline-sub-list">
+              <li data-i18n="exp.aolang.li1">✍️ 独立撰写品牌营销文章<span class="hl">20+篇</span>，运营官方微博累计发布400条内容，全网曝光量超<span class="hl">20W+</span>。</li>
+              <li data-i18n="exp.aolang.li2">🤝 成功拓展小龙坎、CoCo都可等品牌合作，对接KOL资源并撰写商务策划案。</li>
+              <li data-i18n="exp.aolang.li3">📈 通过热点话题策划增加粉丝互动，账号月互动率提升<span class="hl">45%</span>。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 7. 南昌电视台实习 -->
+        <div class="timeline-item reveal-item" data-aos="fade-up">
+          <span class="timeline-dot dot-intern"></span>
+          <div class="timeline-card">
+            <span class="timeline-date">📅 2016.06 - 2016.09</span>
+            <h3 class="timeline-title" data-i18n="exp.tv.title">江西南昌电视台 · 实习记者 <span class="intern-badge">🎓 实习经历</span></h3>
+            <ul class="timeline-sub-list">
+              <li data-i18n="exp.tv.li1">🎤 负责《每日新闻》栏目采编，独立完成电视新闻采编<span class="hl">20余条</span>，其中<span class="hl">3条</span>被省级新闻频道采用。</li>
+              <li data-i18n="exp.tv.li2">📺 参与《观点》栏目专题策划，协助热点话题调研及嘉宾采访提纲撰写，提升栏目深度。</li>
+              <li data-i18n="exp.tv.li3">🏅 锻炼了从选题到成片的全流程制作能力，获带教记者"高效执行力"评价。</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 工作成果 ═══════════════════ -->
+  <section class="section section-works" id="works">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; display: block;" data-i18n="works.title">工作成果</h2>
+      <p class="section-subtitle" style="text-align: center;" data-i18n="works.subtitle">正好做了点东西，刚好有人看到，哇~运气不错耶◍˃ᵕ˂◍ ！🚀</p>
+      <div class="works-grid">
+        <!-- 成果1 -->
+        <div class="work-card" data-aos="fade-up">
+          <div class="work-card-glow"></div>
+          <div class="work-icon">🚀</div>
+          <h3 class="work-title" data-i18n="works.1.title">新品上市整合品牌传播策划</h3>
+          <p class="work-desc" data-i18n="works.1.desc"><strong style="color: #564067; font-size: 1.08em;">主导努比亚Flip2等重点新品从预热、发布到上市的全程传播策略制定与项目落地。</strong>围绕"国民小折叠，真AI随声动"核心主张，锁定年轻潮流人群，策划线上线下整合营销事件。通过KOL评测和深耕小红书平台种草，构建差异化传播策略。同时参与努比亚Z70SUltra摄影师版、努比亚Z80Ultra等旗舰产品的上市方案策划</p>
+          <div class="work-metrics">
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.1.m1v">全程</span>
+              <span class="metric-label" data-i18n="works.1.m1l">传播策略</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.1.m2v">3+</span>
+              <span class="metric-label" data-i18n="works.1.m2l">旗舰产品</span>
+            </div>
+          </div>
+        </div>
+        <!-- 成果2 -->
+        <div class="work-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="work-card-glow"></div>
+          <div class="work-icon">📱</div>
+          <h3 class="work-title" data-i18n="works.2.title">社交媒体矩阵账号运营</h3>
+          <p class="work-desc" data-i18n="works.2.desc">负责中兴x努比亚官方微博、微信、抖音、小红书等社交<strong style="color: #564067; font-size: 1.08em;">账号体系的日常运营与内容建设。</strong>结合网络热点/行业趋势，通过图文、视频等多种形式产出内容，提升牛仔的粉丝黏性与互动活跃度。如12.3日结合小红书平台热梗"放生垃圾箱"选题强调努比亚Z80U及摄影套装的卖点优势，曝光50w+余次，互动5000+，有效涨粉互动提升近2000%</p>
+          <div class="work-metrics">
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.2.m1v">50w+</span>
+              <span class="metric-label" data-i18n="works.2.m1l">曝光量</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.2.m2v">2000%</span>
+              <span class="metric-label" data-i18n="works.2.m2l">互动提升</span>
+            </div>
+          </div>
+        </div>
+        <!-- 成果3 -->
+        <div class="work-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="work-card-glow"></div>
+          <div class="work-icon">📊</div>
+          <h3 class="work-title" data-i18n="works.3.title">效果广告投放与商业话题运营</h3>
+          <p class="work-desc" data-i18n="works.3.desc">配合努比亚Z80Ultra、努比亚Flip2等旗舰新品上市，主导抖音、微博等<strong style="color: #564067; font-size: 1.08em;">信息流广告投放策略，</strong>同时搭建努比亚Flip2、Z80U等新品的商业话题、热搜话题，增加产品流量曝光与入口，累计信息流推广曝光约增加8000W+。同时通过人群定向、信息流A&B测试，持续降低投放成本，并<strong style="color: #564067; font-size: 1.08em;">获取产品优势卖点的有效信息。</strong></p>
+          <div class="work-metrics">
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.3.m1v">8000W+</span>
+              <span class="metric-label" data-i18n="works.3.m1l">累计曝光</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.3.m2v">A/B</span>
+              <span class="metric-label" data-i18n="works.3.m2l">持续优化</span>
+            </div>
+          </div>
+        </div>
+        <!-- 成果4 -->
+        <div class="work-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="work-card-glow"></div>
+          <div class="work-icon">🔥</div>
+          <h3 class="work-title" data-i18n="works.4.title">热点借势营销</h3>
+          <p class="work-desc" data-i18n="works.4.desc">从"快速响应"到"主动造势"——及时监测社会、数码行业及跨圈层热点，快速响应并策划努比亚品牌热点传播，借势提升努比亚Z80U产品曝光与话题参与度。<strong style="color: #d4789c; font-size: 1.08em; background: rgba(212, 120, 156, 0.15); padding: 1px 6px; border-radius: 4px;">借势升级：</strong>快速跟进社会相关热点话题，思考与产品本身卖点的结合点，实现"蹭热点"到"成为热点一部分"的跨越。如打造"努比亚Flip2才是人人买得起的小折叠"。<strong style="color: #d4789c; font-size: 1.08em; background: rgba(212, 120, 156, 0.15); padding: 1px 6px; border-radius: 4px;">话题主动造势：</strong>借助中兴x努比亚成为苏超官方赞助商的背景，策划南京场直播送周边礼包、努比亚女孩惊现苏超现场等热点内容，实现破圈传播。</p>
+          <div class="work-metrics">
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.4.m1v">破圈</span>
+              <span class="metric-label" data-i18n="works.4.m1l">传播效果</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" data-i18n="works.4.m2v">主动</span>
+              <span class="metric-label" data-i18n="works.4.m2l">造势策略</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 爆款内容中台 ═══════════════════ -->
+  <section class="section section-works-feed" id="works-feed">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; display: block;" data-i18n="feed.title">✨ 爆款内容中台</h2>
+      <div class="feed-container">
+
+        <!-- 左栏：方法论与大图 -->
+        <div class="feed-left">
+          <div class="feed-left-img">
+            <img src="assets/manggo/3.jpg" alt="内容洞察现场">
+          </div>
+          <div class="feed-intro">
+            <p data-i18n="feed.body">品牌策划、新媒体运营、广告投放、创作者矩阵的搭建等等，这些看似独立的"术"，其<strong>本质都在服务于品牌传播</strong>。最终目标：既是品牌流量的曝光与突围；也是如何对用户需求进行深度挖掘与精准回应，找到<strong>引发用户心绪的情绪锚点和痛点</strong>，进而与产品本身的强势卖点结合，最终通过合理的传播策划，占领品牌心智建设与资产增长的战略高地。</p>
+            <div class="feed-insight">
+              <span class="feed-insight-label" data-i18n="feed.insight.label">💡 核心洞察 (Insight)</span>
+              <span data-i18n="feed.insight.text">回归产品本身，找准能够解决用户痛点、创造独特价值的产品卖点+差异化优势，"反常识"与"用户痛点"是击穿圈层的利器。</span>
+            </div>
+            <div class="feed-growth">
+              <span class="feed-growth-label" data-i18n="feed.growth.label">📈 增长复制 (Growth)</span>
+              <span data-i18n="feed.growth.text"><strong>传播最大化=好的内容+正确的渠道+把控传播节奏</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右栏：仿小红书手机瀑布流 -->
+        <div class="feed-right">
+          <div class="arrow-connector">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ff2e4d" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="xhs-grid">
+                <!-- 左列 -->
+                <div class="xhs-col">
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://www.xiaohongshu.com/explore/6333cc2b0000000017032792?xsec_token=AB0YgMVvBPT-BcEb3avskEX6PInO9e7jFN862jMDkRB-s=&xsec_source=pc_user')">
+                    <img src="https://sns-webpic-qc.xhscdn.com/202606081339/8058431f68fa3c9553fe0b594271fe55/03029s016j6faqxdhyh010qknsqdxlv54u!nd_dft_wlteh_jpg_3" alt="这大概就是在手机公司上班的烦恼吧" style="aspect-ratio: 300/320;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">这大概就是在手机公司上班的烦恼吧</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="1200" onclick="toggleLike(event, this)">🤍 1.2k</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://www.xiaohongshu.com/explore/66398fc0000000001e0242c0?xsec_token=ABqISn6dnoW6Y91NSdZh2EuOMAj2O40as1xMYZFH3UTy4=&xsec_source=pc_user')">
+                    <img src="https://sns-webpic-qc.xhscdn.com/202606081339/b81d6a70cd04b6580d757e1557d80d08/1040g2sg312ft1bhl6k604a3o8ellkp990tdfg10!nd_dft_wlteh_jpg_3" alt="抽奖🎁努比亚创作者招募计划正式开启❗" style="aspect-ratio: 300/280;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">抽奖🎁努比亚创作者招募计划正式开启❗</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="5300" onclick="toggleLike(event, this)">🤍 5.3k</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://www.xiaohongshu.com/explore/64dc67750000000003020495?xsec_token=ABdydWcFVPxjyc8H3uz1d_HR_4UQLRo_96xNBJHCftaV4=&xsec_source=pc_user')">
+                    <img src="https://sns-webpic-qc.xhscdn.com/202606081339/4b8f78417c436a72f75a5ab988b9a24f/spectrum/1040g0k030nqtk58o18004a3o8ellkp998e1vpo8!nd_dft_wlteh_jpg_3" alt="听说没有一个S人能笑着走出N人的手机🤣" style="aspect-ratio: 300/290;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">听说没有一个S人能笑着走出N人的手机🤣</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="8200" onclick="toggleLike(event, this)">🤍 8.2k</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://www.xiaohongshu.com/explore/646dc38e0000000013004bb8?xsec_token=ABnHAUETwQ20AmjkFtMGO_-h2zTn9eOiI4sk2PFH1YcrI=&xsec_source=pc_user')">
+                    <img src="https://sns-webpic-qc.xhscdn.com/202606081339/015bf91eb1ac2ce3375db36439e985a4/spectrum/1000g0k02hrh938sis0004a3o8ellkp99eg18mv0!nd_dft_wlteh_jpg_3" alt="如果夏天只能选三个度过，你选哪三个？" style="aspect-ratio: 300/310;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">如果夏天只能选三个度过，你选哪三个？</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="3700" onclick="toggleLike(event, this)">🤍 3.7k</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 右列 -->
+                <div class="xhs-col">
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://v.douyin.com/Gv3JNbEGBeA/')">
+                    <img src="https://p26-sign.douyinpic.com/tos-cn-i-dy/15dd706b14364a7b963d55cc7f0ec6f5~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1782104400&x-signature=hiYlTRfE4%2FK4%2BovDwl6hjJr3boA%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=202606081340449DE5042971067266B24C" alt="2899的小折叠屏，心仪女生的定情信物？" style="aspect-ratio: 300/340;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">2899的小折叠屏，心仪女生的定情信物？质感好、又漂亮、关键便宜只要</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="11000" onclick="toggleLike(event, this)">🤍 11k</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://v.douyin.com/JraW4EZGVZc/')">
+                    <img src="https://p26-sign.douyinpic.com/tos-cn-i-0813c001/oUSiUACOEweDDqAn2f3PGI2uzUA1PB9Z4AigAA~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1782104400&x-signature=KxzLVyVfX8XQbQzvqVZRFDc1ty8%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20260608134044B2767F44C1A29E372965" alt="采访模特女友：不到三千块的小折叠手机使用体验如何？" style="aspect-ratio: 300/300;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">采访模特女友：不到三千块的小折叠手机使用体验如何？</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="4200" onclick="toggleLike(event, this)">🤍 4.2k</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://v.douyin.com/00kTpqXIW2M/')">
+                    <img src="https://p3-sign.douyinpic.com/tos-cn-i-dy/f18f55f63a924092877a67ebfd5abb30~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1782104400&x-signature=eXrQ8xm3DiR4W0RDV6JelwDQtS8%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=2026060813404597141B859EB018678D51" alt="苏超观赛神机—努比亚Z80 Ultra" style="aspect-ratio: 300/280;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">苏超观赛神机—努比亚Z80 Ultra</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="15000" onclick="toggleLike(event, this)">🤍 15k</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xhs-clickable-card" onclick="navigateToNote(event, 'https://v.douyin.com/qYUYBy7u2nM/')">
+                    <img src="https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-i-0813c000-ce/o4AfiFdoA1T9hD90IeJEYYAqB2EAaoKewAEqE2~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1782104400&x-signature=VXtgJlXKxt%2FwEbwJoezrRYrx8sY%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20260608134045186A6C4A24FE883CA2F5" alt="苏超尽管踢，剩下的交给咱牛牛" style="aspect-ratio: 300/320;">
+                    <div class="xhs-card-body">
+                      <p class="xhs-card-title">苏超尽管踢，剩下的交给咱牛牛</p>
+                      <div class="xhs-card-footer">
+                        <span class="xhs-card-author">@西西同学</span>
+                        <span class="like-btn" data-count="9600" onclick="toggleLike(event, this)">🤍 9.6k</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="feed-hint" data-i18n="feed.hint">💡 点击卡片跳转小红书示例链接 · 点击爱心可点赞/取消</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 捕获野生西西墙 ═══════════════════ -->
+  <section class="safari-section" id="safari">
+    <canvas id="bubbleCanvas"></canvas>
+    <div class="container safari-inner">
+      <div class="safari-header" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+        <div>
+          <h2 class="section-title" data-i18n="safari.title">✨捕获野生西西墙✨</h2>
+          <p class="section-subtitle" data-i18n="safari.subtitle">看准时机🍧！从下方传送带<strong>按住并向上</strong>抽取一张形态，去击碎满屏的彩虹泡泡🫧！</p>
+        </div>
+        <button id="bubbleMuteBtn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; z-index: 10001; backdrop-filter: blur(5px); margin-right: 40px; transition: background 0.2s; pointer-events: auto;">🔊</button>
+      </div>
+      <div class="safari-showcase" id="safariShowcase">
+        <div class="safari-track" id="safariTrack">
+          <div class="wild-card"><div class="bubble-popup">🤫 正在策划一个1.6亿播放的大动作</div><img src="assets/paopao/1.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">⚽ 苏超现场！正在假装很懂足球</div><img src="assets/paopao/2.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">📹 剪辑到头秃，但拉新转化率40%！</div><img src="assets/paopao/3.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🎓 上大生活！论文发表那一刻大哭</div><img src="assets/paopao/4.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🎤 电视台实习！当年的话筒比脸沉</div><img src="assets/paopao/5.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🏖️ 来人间一趟，总要先晒个太阳</div><img src="assets/paopao/6.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">💻 vibe coding中，请勿打扰</div><img src="assets/paopao/7.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">☕ 第三杯咖啡了，灵感快来</div><img src="assets/paopao/8.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">📸 拍照五分钟，修图两小时</div><img src="assets/paopao/9.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🌙 深夜灵感爆发模式ON</div><img src="assets/paopao/10.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🎯 数据不会骗人，但会说谎</div><img src="assets/paopao/11.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🎨 AI画的比我好看系列</div><img src="assets/paopao/12.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">📊 老板说再改最后一版</div><img src="assets/paopao/13.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">🌈 生活不止PPT和KPI</div><img src="assets/paopao/14.jpg" alt="野生西西"></div>
+          <div class="wild-card"><div class="bubble-popup">✨ 做自己喜欢的事最闪亮</div><img src="assets/paopao/15.jpg" alt="野生西西"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ AI创作 ═══════════════════ -->
+  <section class="section section-jump section-ai" id="ai-creation">
+    <div class="container section-split">
+      <div class="section-split-left">
+        <h2 class="section-title" data-i18n="ai.title">AI创作</h2>
+        <p class="section-subtitle" data-i18n="ai.subtitle">1 person + AI = 无限可能</p>
+      </div>
+      <div class="section-split-right">
+      <div class="ai-showcase">
+        <div class="ai-card ai-card-main" data-aos="fade-up">
+          <div class="ai-card-inner">
+            <div class="ai-card-visual">
+              <div class="ai-orb">
+                <div class="orb-ring orb-ring-1"></div>
+                <div class="orb-ring orb-ring-2"></div>
+                <div class="orb-ring orb-ring-3"></div>
+                <div class="orb-core">AI</div>
+              </div>
+            </div>
+            <div class="ai-card-content">
+              <h3 data-i18n="ai.viewpoint.title">观点</h3>
+              <p data-i18n="ai.viewpoint.desc">📓AI是杠杆，拓展了灵感&创意的上限，擅长把不可思议变为可能，但创意的价值并不在于'机械生成'🐰。毕竟AI永远无法脱离人类的脑子和认知，机器不能替代和决定的那些东西，那才是人类真正价值所在🍺。</p>
+            </div>
+          </div>
+        </div>
+        <div class="ai-cards-row">
+          <div class="ai-card ai-card-placeholder" data-aos="fade-up" data-aos-delay="100">
+            <div class="ai-placeholder-icon">🪄</div>
+            <h4 data-i18n="ai.miniapp.title">小程序效果/功能展示</h4>
+            <p class="coming-soon" data-i18n="ai.coming">即将上线 ✨</p>
+          </div>
+          <div class="ai-card ai-card-placeholder" data-aos="fade-up" data-aos-delay="200">
+            <div class="ai-placeholder-icon">🎬</div>
+            <h4 data-i18n="ai.video.title">AI创作视频展示</h4>
+            <p class="coming-soon" data-i18n="ai.coming">即将上线 ✨</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 惊喜盲盒 ═══════════════════ -->
+  <section class="section section-gradient section-surprise" id="surprise">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; display: block;" data-i18n="surprise.title">🎁 惊喜盲盒</h2>
+      <p class="section-subtitle" style="text-align: center;" data-i18n="surprise.subtitle">👉 点击下方任意卡牌，瞬间解锁西西的神秘隐藏属性</p>
+      <div class="blindbox-area">
+        <div class="blindbox-cards" id="blindboxCards">
+
+          <div class="card-container" data-index="1">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 01</span>
+              </div>
+              <div class="card-back" style="--card-accent: #FF64AE;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/1.png">
+                  <img src="assets/manggo/1.png" alt="爆款内容制造机·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.1.title">💥 爆款内容制造机</h4>
+                  <p data-i18n="surprise.1.desc">在网络的碎片信息中精准捕捉热点，用网感嗅觉撬动流量杠杆，让多条视频成为现象级传播，抖音千万播放+小红书百万播放达成者。从编导、选题到策划、打光、拍摄、剪辑，全流程一部手机就能搞定！</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container" data-index="2">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 02</span>
+              </div>
+              <div class="card-back" style="--card-accent: #a855f7;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/2.png">
+                  <img src="assets/manggo/2.png" alt="处女座·ISFJ·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.2.title">♍ 处女座 + ISFJ 支点</h4>
+                  <p data-i18n="surprise.2.desc">在严格的细节控与完美服务型人格之间，永远用无懈可击的全面计划抵御现实的无序与混乱。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container" data-index="3">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 03</span>
+              </div>
+              <div class="card-back" style="--card-accent: #6366f1;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/3.png">
+                  <img src="assets/manggo/3.png" alt="好奇心永动机·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.3.title">🔋 好奇心永动机</h4>
+                  <p data-i18n="surprise.3.desc">永远敏锐聚焦最新前沿动态，把天马行空转化为强执行力，在未知领域快节奏试错！</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container" data-index="4">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 04</span>
+              </div>
+              <div class="card-back" style="--card-accent: #22c55e;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/4.png">
+                  <img src="assets/manggo/4.png" alt="卡皮巴拉·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.4.title">🥑 稳定卡皮巴拉状态</h4>
+                  <p data-i18n="surprise.4.desc">日常情绪维持一种低饱和的稳定状态，有点像卡皮巴拉。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container" data-index="5">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 05</span>
+              </div>
+              <div class="card-back" style="--card-accent: #eab308;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/card5.png">
+                  <img src="assets/manggo/card5.png" alt="英雄联盟·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.5.title">🎮 英雄联盟·多赛季大师</h4>
+                  <p data-i18n="surprise.5.desc">高压激烈对局中时刻能保持极端清醒，操作与大局观拉满，极强抗压韧性，是绝对的长期主义者。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container" data-index="6">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 06</span>
+              </div>
+              <div class="card-back" style="--card-accent: #14b8a6;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/6.png">
+                  <img src="assets/manggo/6.png" alt="美商极高·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.6.title">✨ 此人美商极高</h4>
+                  <p data-i18n="surprise.6.desc">对视觉构图和色彩体系拥有绝佳的直觉。尽管非专业摄影师，但日常产出天然叠满审美出片Buff！</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container" data-index="7">
+            <div class="card-inner">
+              <div class="card-front card-front-gradient">
+                <span class="card-front-icon">🎁</span>
+                <span class="card-front-label">MYSTERY BOX 07</span>
+              </div>
+              <div class="card-back" style="--card-accent: #3b82f6;">
+                <div class="card-back-photo lightbox-trigger" data-lightbox="assets/manggo/7.png">
+                  <img src="assets/manggo/7.png" alt="公园氧吧·西西">
+                </div>
+                <div class="card-back-content">
+                  <h4 data-i18n="surprise.7.title">🌳 公园是天然氧吧</h4>
+                  <p data-i18n="surprise.7.desc">低能量时喜欢逛公园，超爱拥抱大树的！从树木中汲取能量，自我调节水平已经是next level了！</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 联系方式 ═══════════════════ -->
+  <section class="section section-jump section-contact" id="contact">
+    <div class="container section-split">
+      <div class="section-split-left">
+        <h2 class="section-title" data-i18n="contact.title">联系方式</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">期待与你相遇</p>
+      </div>
+      <div class="section-split-right">
+      <div class="contact-cards">
+        <div class="contact-card" data-aos="fade-up">
+          <div class="contact-icon">📧</div>
+          <h4 data-i18n="contact.email.label">邮箱</h4>
+          <a href="mailto:416996026@qq.com" class="contact-link" id="contactEmail">416996026@qq.com</a>
+        </div>
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-icon">📱</div>
+          <h4 data-i18n="contact.phone.label">电话</h4>
+          <a href="tel:+86-130-xxxx-3287" class="contact-link" id="contactPhone">+86 130-xxxx-3287</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 页脚 ═══════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        <span class="footer-star">✦</span>
+        <span data-i18n="footer.text">Made with curiosity & AI</span>
+        <span class="footer-star">✦</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- 预加载工牌头像 -->
+  <img id="avatarPreload" src="assets/xixi1.png" style="display:none;" crossorigin="anonymous" />
+
+  <!-- 点击放大弹窗 -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img src="" alt="放大查看" id="lightboxImg">
+  </div>
+
+  <!-- 悬浮预览抽屉 -->
+  <div class="hover-preview-drawer" id="hoverPreviewDrawer">
+    <img src="" alt="预览" id="previewDrawerImg">
+  </div>
+
+  <!-- 盲盒翻转 Toast -->
+  <div id="blindboxToast" class="blindbox-toast">✨ 惊喜解锁 ✨</div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/blindbox-3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════════
+   Animations & Transitions
+   ═══════════════════════════════════════════ */
+
+/* ── Keyframes ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes scroll-dot {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes orb-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-tag {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 120, 156, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 120, 156, 0.25);
+  }
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -15px);
+  }
+  50% {
+    transform: translate(-5px, -25px);
+  }
+  75% {
+    transform: translate(-15px, -10px);
+  }
+}
+
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
+}
+
+/* ── Tag floating animation ── */
+.tag-float {
+  animation: float-tag 6s ease-in-out infinite;
+}
+
+.tag-float[data-delay="0"] { animation-delay: 0s; }
+.tag-float[data-delay="1"] { animation-delay: 0.8s; }
+.tag-float[data-delay="2"] { animation-delay: 1.6s; }
+.tag-float[data-delay="3"] { animation-delay: 2.4s; }
+.tag-float[data-delay="4"] { animation-delay: 3.2s; }
+.tag-float[data-delay="5"] { animation-delay: 4s; }
+.tag-float[data-delay="6"] { animation-delay: 4.8s; }
+
+/* ── Scroll reveal (AOS-like) ── */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="400"] { transition-delay: 0.4s; }
+
+/* ── Page load animation ── */
+.hero-content {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.hero-tags {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.hero-title {
+  animation: fade-in-scale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+.hero-subtitle {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+.hero-desc {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;
+}
+
+.scroll-hint {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;
+}
+
+/* ── Hover micro-interactions ── */
+.timeline-card,
+.work-card,
+.ai-card,
+.contact-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Card shimmer effect ── */
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.work-card:hover::before {
+  left: 100%;
+}
+
+/* ── Navbar scroll transition ── */
+.navbar {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Gradient text shimmer ── */
+.hero-title {
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite, fade-in-scale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+/* ── Pulse glow for active elements ── */
+.hero-badge {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* ── Smooth section transitions ── */
+.section {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* ── Grid background pattern (subtle) ── */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0;
+  animation: grid-pulse 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Tag cloud drift ── */
+.hero-tags .tag {
+  position: relative;
+}
+
+.hero-tags .tag::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--gradient-accent);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+}
+
+.hero-tags .tag:hover::after {
+  opacity: 0.15;
+}
+
+/* ── Loading state ── */
+body.loading {
+  overflow: hidden;
+}
+
+body.loading .hero-content,
+body.loading .hero-tags {
+  opacity: 0;
+}
+
+/* ── Selection style ── */
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .tag-float {
+    animation: none !important;
+  }
+
+  .hero-title {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
