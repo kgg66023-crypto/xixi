@@ -96,6 +96,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -103,7 +104,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -2111,6 +2112,14 @@ button {
   }
 
   /* 首屏移动端：上下布局 */
+  .hero {
+    flex-direction: column;
+    gap: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 64px;
+  }
+
   .hero-content {
     position: relative;
     top: auto;
