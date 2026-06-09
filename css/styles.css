@@ -96,7 +96,6 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 body {
@@ -104,7 +103,8 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: clip;
+  overflow-x: hidden;
+  touch-action: pan-y;
   transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -2065,6 +2065,10 @@ button {
    Responsive
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
+  * {
+    touch-action: pan-y !important;
+  }
+
   .nav-links {
     position: fixed;
     top: 64px;
@@ -2118,10 +2122,20 @@ button {
     padding-left: 0;
     padding-right: 0;
     padding-top: 64px;
+    overflow: visible;
   }
 
   .hero-canvas-wrapper {
     pointer-events: none;
+    touch-action: pan-y;
+  }
+
+  #heroCanvas,
+  #ballsCanvas,
+  #lanyardCanvas,
+  #bubbleCanvas {
+    pointer-events: none;
+    touch-action: pan-y;
   }
 
   .hero-content {
