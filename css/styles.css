@@ -1767,6 +1767,44 @@ button {
   margin-bottom: 8px;
 }
 
+/* AI 视频卡片 */
+.ai-card-video {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ai-video-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.ai-video-wrapper video {
+  width: 100%;
+  display: block;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.ai-video-info {
+  text-align: center;
+}
+
+.ai-video-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.ai-video-info .coming-soon {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
 .coming-soon {
   font-size: 0.85rem;
   color: var(--accent);
